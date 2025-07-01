@@ -4,6 +4,7 @@ metadata:
   name: ebs-static
 spec:
   storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
+  # PV name
   volumeName: ebs-static
   accessModes:
     - ReadWriteOnce
@@ -34,7 +35,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: nginx-lb 
+  name: nginx-lb
 spec:
   type: LoadBalancer
   selector: # labels are used as selectors
