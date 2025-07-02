@@ -34,10 +34,10 @@ metadata:
   name: nginx-lb
 spec:
   type: LoadBalancer
-  selector: # lables are used for selectors
+  selector: # labels are used as selectors
     purpose: "efs-dynamic-demo"
   ports:
   - protocol: TCP
-    port: 80 # service Port
+    port: 80 # service port
     targetPort: 80
     nodePort: 30007
