@@ -13,7 +13,7 @@ spec:
   selector:
     app: nginx
 ---
-apiVersion: v1
+apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: nginx
@@ -41,9 +41,9 @@ spec:
         volumeMounts:
         - name: www
           mountPath: /usr/share/nginx/html
-    # Instead of creating a PVC resource, you can directly provide in statefulset
-    volumeClaimTemplates:
-    - metadata:
+  # Instead of creating a PVC resource, you can directly provide in statefulset
+  volumeClaimTemplates:
+  - metadata:
       name: www
     spec:
       accessModes: [ "ReadWriteOnce" ]
